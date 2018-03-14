@@ -1,0 +1,38 @@
+[user]
+  name = mkldon
+  email = ryanzin@uchi.ru
+  signingkey = B58CD53D
+[core]
+  excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
+[diff]
+  algorithm = patience
+[alias]
+  s = status
+  d = diff
+  a = add .
+  ap = add -p
+  dc = diff --cached
+  pr = pull --rebase
+  aa = add --all
+  ca = commit --amend -C HEAD
+  c  = commit
+  m = commit -m
+  co = checkout
+  cob = checkout -b
+  pp = !git pull --rebase && git push
+  cp = cherry-pick
+[merge]
+  tool = meld
+[mergetool]
+  prompt = false
+  keepBackup = false
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+[commit]
+  gpgsign = true
+[push]
+  default = current
+[help]
+  autocorrect = 1
