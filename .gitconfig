@@ -1,7 +1,7 @@
 [user]
   name = mkldon
-  email = ryanzin@uchi.ru
-  signingkey = B58CD53D
+  email = mryanzin@gmail.com
+# signingkey = B58CD53D
 [core]
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
@@ -31,7 +31,7 @@
   trustExitCode = true
   cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [commit]
-  gpgsign = true
+#  gpgsign = true
 [push]
   default = current
 [help]
