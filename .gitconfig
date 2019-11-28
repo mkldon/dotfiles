@@ -1,10 +1,11 @@
 [user]
   name = mkldon
-  email = mryanzin@gmail.com
+	email = m.ryanzin@rocketguys.com
 # signingkey = B58CD53D
 [core]
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
+	editor = /usr/bin/vim
 [diff]
   algorithm = patience
 [alias]
