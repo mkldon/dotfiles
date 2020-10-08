@@ -21,6 +21,7 @@
   m = commit -m
   co = checkout
   cob = checkout -b
+  nb = !git checkout master && git pull && git checkout -b
   pp = !git pull --rebase && git push
   cp = cherry-pick
 [merge]
@@ -34,6 +35,6 @@
 [commit]
 #  gpgsign = true
 [push]
-  default = current
+	default = current
 [help]
   autocorrect = 1

@@ -1,3 +1,5 @@
 .rbenv-gemsets
 .DS_Store
 .pry_history
+.rgignore
+.tags
