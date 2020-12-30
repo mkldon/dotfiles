@@ -3,6 +3,7 @@ set PATH /usr/local/opt/python/libexec/bin $PATH
 set PATH /Users/mike/Library/Python/2.7/bin $PATH
 set PATH /usr/local/opt/imagemagick@6/bin $PATH
 set PATH ~/yandex-cloud/bin $PATH
+set PATH /Users/mike/Library/Python/3.7/bin $PATH
 set -g fish_user_paths "/usr/local/opt/imagemagick@6/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -x EDITOR vim

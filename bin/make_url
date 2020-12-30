@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo [InternetShortcut] > $1
+echo URL=$2 >> $1
+echo IconIndex=0 >> $1

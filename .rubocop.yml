@@ -1,0 +1,166 @@
+AllCops:
+  Exclude:
+    - app/proto/**/*
+  NewCops: enable
+
+# Nested style prevents project search/replace and considered bad
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+# Good for pattern-matching-like error handling etc
+Lint/EmptyWhen:
+  Enabled: false
+
+# Commonly used screens these days easily fit more than 80 characters.
+Layout/LineLength:
+  Max: 120
+
+# 15 seems to small for rocket projects
+Metrics/AbcSize:
+  Max: 25
+
+# Too short methods lead to extraction of single-use methods, which can make
+# the code easier to read (by naming things), but can also clutter the class
+Metrics/MethodLength:
+  Max: 20
+
+# The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
+Metrics/ClassLength:
+  Max: 1000
+
+# No space makes the method definition shorter and differentiates
+# from a regular assignment.
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
+# Single quotes being faster is hardly measurable and only affects parse time.
+# Enforcing double quotes js the times where you need to change them
+# when introducing an interpolation. Use single quotes only if their semantics
+# are needed.
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# We do not need to support Ruby 1.9, so this is good to use.
+Style/SymbolArray:
+  Enabled: true
+
+# Most readable form.
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+# Mixing the styles looks just silly.
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+# has_key? and has_value? are far more readable than key? and value?
+Style/PreferredHashMethods:
+  Enabled: false
+
+# String#% is by far the least verbose and only object oriented variant.
+Style/FormatString:
+  EnforcedStyle: percent
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    inject: reduce
+
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+
+# A specialized exception class will take one or more arguments and construct the message from it.
+# So both variants make sense.
+Style/RaiseArgs:
+  Enabled: false
+
+# # Indenting the chained dots beneath each other is not supported by this cop,
+# # see https://github.com/bbatsov/rubocop/issues/1633
+# Naming/BinaryOperatorParameterName:
+#   Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+# Suppressing exceptions can be perfectly fine, and be it to avoid to
+# explicitly type nil into the rescue since that's what you want to return,
+# or suppressing LoadError for optional dependencies
+Lint/SuppressedException:
+  Enabled: false
+
+Layout/SpaceInsideBlockBraces:
+  SpaceBeforeBlockParameters: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+
+# { ... } for multi-line blocks is okay, follow Weirichs rule instead:
+# https://web.archive.org/web/20140221124509/http://onestepback.org/index.cgi/Tech/Ruby/BraceVsDoEnd.rdoc
+Style/BlockDelimiters:
+  Enabled: false
+
+# do / end blocks should be used for side effects,
+# methods that run a block for side effects and have
+# a useful return value are rare, assign the return
+# value to a local variable for those cases.
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+# Alerts on dry-initializer :(
+Style/LambdaCall:
+  Enabled: false
+
+# Maybe, someday..
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Looks ugly for multiple clauses in different places
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+# I just love them
+Style/SingleLineMethods:
+  Enabled: false
+
+# Does not work for single-line methods
+Layout/EmptyLineBetweenDefs:
+  Enabled: false
+
+Layout/LeadingCommentSpace:
+  Enabled: false
+
+# We are Russians, God is with us
+Style/AsciiComments:
+  Enabled: false
+
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+
+# ruins Dry::Initializer container version syntax
+Style/Lambda:
+  Enabled: false
+
+# One letter variable names is a code smell
+Naming/RescuedExceptionsVariableName:
+  PreferredName: ex
+
+# Sometimes much more readable this way
+Style/ParenthesesAroundCondition:
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+
+# Common ruby idiom. Fuck Bozhidar
+Style/DoubleNegation:
+  Enabled: false
