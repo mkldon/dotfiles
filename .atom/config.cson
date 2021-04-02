@@ -1,0 +1,17 @@
+"*":
+  core:
+    disabledPackages: [
+      "symbols-view"
+      "linter-rubocop"
+      "atom-json-format"
+    ]
+  editor:
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "053b9875-3823-44c2-a4a4-135567f267d6"
+  "git-blame":
+    columnWidth: 354
+  "linter-rubocop":
+    command: "/Users/user/.rbenv/shims/rubocop"
+    disableWhenNoConfigFile: true
+  "tree-view": {}
