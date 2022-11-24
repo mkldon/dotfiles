@@ -5,6 +5,7 @@ for f in .gitconfig .gitattributes .gitignore_global; do
   ln -s `pwd`/$f ~/
 done
 
+rm ~/.config/fish/config.fish
 ln -s `pwd`/config.fish ~/.config/fish/config.fish
 
 cp `pwd`/bin/test_branch.rb /usr/local/bin/

@@ -1,11 +1,11 @@
 [user]
-	name = mryanzin
-	email = mryanzin@gmail.com
+  name = Mikhail Ryanzin
+  email = mryanzin@ozon.ru
 # signingkey = B58CD53D
 [core]
   excludesfile = ~/.gitignore_global
   attributesfile = ~/.gitattributes
-	editor = /usr/bin/vim
+  editor = /usr/bin/vim
 [diff]
   algorithm = patience
 [alias]
@@ -21,9 +21,14 @@
   m = commit -m
   co = checkout
   cob = checkout -b
-  nb = !git checkout master && git pull && git checkout -b
+  com = checkout master
+  nb = !git checkout release && git pull && git checkout -b
   pp = !git pull --rebase && git push
   cp = cherry-pick
+  bl = branch --sort=-committerdate 
+  pof = push origin --force
+  po = push origin -u
+
 [merge]
   tool = meld
 [mergetool]
@@ -34,7 +39,15 @@
   cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 [commit]
 #  gpgsign = true
+  template = ~/.gitmessage
 [push]
 	default = current
 [help]
   autocorrect = 1
+
+[url "ssh://git@gitlab.ozon.ru/"]
+	insteadOf = https://gitlab.ozon.ru/
+[init]
+	templatedir = ~/.git-templates
+[branch]
+	autosetupmerge = always
