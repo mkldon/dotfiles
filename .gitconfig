@@ -28,9 +28,12 @@
   bl = branch --sort=-committerdate 
   pof = push origin --force
   po = push origin -u
+  su = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+  mm = !git checkout master && git pull && git checkout - && git merge master
+
 
 [merge]
-  tool = meld
+	tool = smerge
 [mergetool]
   prompt = false
   keepBackup = false
@@ -42,6 +45,7 @@
   template = ~/.gitmessage
 [push]
 	default = current
+	autoSetupRemote = true
 [help]
   autocorrect = 1
 
@@ -51,3 +55,6 @@
 	templatedir = ~/.git-templates
 [branch]
 	autosetupmerge = always
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true

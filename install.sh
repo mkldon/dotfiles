@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for f in .gitconfig .gitattributes .gitignore_global; do
+for f in .gitconfig .gitattributes .gitignore_global .gitmessage .git-templates; do
   rm -i ~/$f
   ln -s `pwd`/$f ~/
 done
